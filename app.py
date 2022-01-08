@@ -3,6 +3,7 @@ import requests
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     return redirect('/news/')
@@ -42,6 +43,21 @@ def call_news_api(end_point):
     news_response_json = dict(news_request.json())
     articles = news_response_json.get("articles")
     return articles
+
+
+@app.route('/weather/')
+def weather():
+    end_point = "https://api.openweathermap.org/data/2.5/weather?q=Rangiora, NZ&appid=70f646114a0cf8d45f17792318c2950a&units=metric"
+    weather_forcast = call_weather_api(end_point)
+    return render_template('weather.html', weather_forcast=weather_forcast, title='weather')
+
+
+def call_weather_api(end_point):
+    weather_response = requests.get(end_point)
+    weather_response_json = weather_response.json()
+    return weather_response_json
+    # map to custom dict instead for readability and maintainability in html. All at one level with key min_temp
+
 
 
 if __name__ == "__main__":
