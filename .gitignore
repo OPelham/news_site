@@ -161,7 +161,7 @@ cython_debug/
 .idea/
 
 # temporary solution for hiding API Keys
-secrets.py
+hidden_space.py
 
 # End of https://www.toptal.com/developers/gitignore/api/flask
 
