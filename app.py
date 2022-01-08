@@ -51,7 +51,10 @@ def weather():
 
 
 def enquire_current_weather():
-    end_point = "https://api.openweathermap.org/data/2.5/weather?q=Rangiora, NZ&appid=70f646114a0cf8d45f17792318c2950a&units=metric"
+    location_default = "Rangiora"
+    _API_key = "70f646114a0cf8d45f17792318c2950a"
+    _end_point_base = "https://api.openweathermap.org/data/2.5/weather?q={}, NZ&appid={}&units=metric"
+    end_point = _end_point_base.format(location_default, _API_key)
     weather_response = requests.get(end_point).json()
 
     location = weather_response.get("name")
@@ -88,7 +91,11 @@ def enquire_current_weather():
 
 
 def enquire_7_day_forcast():
-    pass
+    location_default = "2192362"  # how get this from user? and how marry to id for call
+    _API_key = "70f646114a0cf8d45f17792318c2950a"
+    _end_point_base = "https://api.openweathermap.org/data/2.5/weather?q={}, NZ&appid={}&units=metric"
+    end_point = _end_point_base.format(location_default, _API_key)
+    weather_response = requests.get(end_point).json()
 
 
 if __name__ == "__main__":
