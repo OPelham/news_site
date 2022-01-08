@@ -3,7 +3,6 @@ import requests
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
     return redirect('/news/')
@@ -47,17 +46,49 @@ def call_news_api(end_point):
 
 @app.route('/weather/')
 def weather():
+    current_weather_dictionary = enquire_current_weather()
+    return render_template('weather.html', current_weather=current_weather_dictionary, title='weather')
+
+
+def enquire_current_weather():
     end_point = "https://api.openweathermap.org/data/2.5/weather?q=Rangiora, NZ&appid=70f646114a0cf8d45f17792318c2950a&units=metric"
-    weather_forcast = call_weather_api(end_point)
-    return render_template('weather.html', weather_forcast=weather_forcast, title='weather')
+    weather_response = requests.get(end_point).json()
+
+    location = weather_response.get("name")
+    weather_type = (weather_response.get("weather"))[0].get("main")
+    _weather_icon = (weather_response.get('weather'))[0].get('icon')
+    _weather_icon_url_base = "http://openweathermap.org/img/w/{}.png"
+    weather_icon_url = _weather_icon_url_base.format(_weather_icon)
+    current_temperature = (weather_response.get("main")).get("temp")
+    max_temperature = (weather_response.get("main")).get("temp_max")
+    min_temperature = (weather_response.get("main")).get("temp_min")
+    cloud_cover = (weather_response.get("clouds")).get("all")
+    humidity = (weather_response.get("main")).get("humidity")
+    pressure = (weather_response.get("main")).get("pressure")
+    wind_speed = (weather_response.get("wind")).get("speed")
+    wind_bearing = (weather_response.get("wind")).get("deg")
+    wind_gust = (weather_response.get("wind")).get("gust")
+
+    current_weather = {
+        "location": location,
+        "weather_type": weather_type,
+        "weather_icon_url": weather_icon_url,
+        "current_temperature": current_temperature,
+        "max_temperature": max_temperature,
+        "min_temperature": min_temperature,
+        "cloud_cover": cloud_cover,
+        "humidity": humidity,
+        "pressure": pressure,
+        "wind_speed": wind_speed,
+        "wind_bearing": wind_bearing,
+        "wind_gust": wind_gust
+    }
+
+    return current_weather
 
 
-def call_weather_api(end_point):
-    weather_response = requests.get(end_point)
-    weather_response_json = weather_response.json()
-    return weather_response_json
-    # map to custom dict instead for readability and maintainability in html. All at one level with key min_temp
-
+def enquire_7_day_forcast():
+    pass
 
 
 if __name__ == "__main__":

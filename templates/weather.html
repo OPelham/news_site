@@ -9,16 +9,16 @@
     <h1>{{ title.capitalize() }}</h1>
 
     <h2>Current Weather</h2>
-    <p>Current weather in {{ weather_forcast.get("name") }}: {{ (weather_forcast.get("weather"))[0].get("main") }}</p>
-    <img src="http://openweathermap.org/img/w/{{ (weather_forcast.get('weather'))[0].get('icon') }}.png" alt="weather icon"></img>
-    <p>The current temperature is {{ (weather_forcast.get("main")).get("temp") }} degrees.
-        <br>Expect a high of {{ (weather_forcast.get("main")).get("temp_max")  }}
-        degrees and a low of {{ (weather_forcast.get("main")).get("temp_min") }} degrees </p>
-    <p>Cloud cover of {{ (weather_forcast.get("clouds")).get("all") }}%</p>
-    <p>Humidity: {{ (weather_forcast.get("main")).get("humidity") }}%
-        <br>Pressure: {{ (weather_forcast.get("main")).get("pressure") }}hPa</p>
-    <p>Current wind speed {{ weather_forcast.get("wind").get("speed") }}, bearing {{ weather_forcast.get("wind").get("deg") }}
-        <br>Gusting to {{ weather_forcast.get("wind").get("gust") }}</p>
+    <p>Current weather in {{ current_weather.get("location") }}: {{ current_weather.get("weather_type") }}</p>
+    <img src="{{ current_weather.get('weather_icon_url') }}" alt="weather icon">
+    <p>The current temperature is {{ current_weather.get("current_temperature") }} degrees.
+        <br>Expect a high of {{ current_weather.get("max_temperature") }}
+        degrees and a low of {{ current_weather.get("min_temperature") }} degrees </p>
+    <p>Cloud cover of {{ current_weather.get("cloud_cover") }}%</p>
+    <p>Humidity: {{ current_weather.get("humidity") }}%
+        <br>Pressure: {{ current_weather.get("pressure") }}hPa</p>
+    <p>Current wind speed {{ current_weather.get("wind_speed") }}, bearing {{ current_weather.get("wind_bearing") }}
+        <br>Gusting to {{ current_weather.get("wind_gust") }}</p>
 
     <h2>7 Day Forcast</h2>
 
