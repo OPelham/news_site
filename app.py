@@ -1,6 +1,8 @@
 from flask import Flask, render_template, redirect
 import requests
 
+import secrets
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -37,7 +39,7 @@ def sport():
 
 
 def call_news_api(end_point):
-    custom_headers = {"x-api-key": "59bceb20876d4a8f97bb58762a79b86a"}
+    custom_headers = {"x-api-key": secrets.NEWS_API_KEY}
     news_request = requests.get(end_point, headers=custom_headers)
     news_response_json = dict(news_request.json())
     articles = news_response_json.get("articles")
@@ -52,7 +54,7 @@ def weather():
 
 def enquire_current_weather():
     location_default = "Rangiora"
-    _API_key = "70f646114a0cf8d45f17792318c2950a"
+    _API_key = secrets.WEATHER_API_KEY
     _end_point_base = "https://api.openweathermap.org/data/2.5/weather?q={}, NZ&appid={}&units=metric"
     end_point = _end_point_base.format(location_default, _API_key)
     weather_response = requests.get(end_point).json()
@@ -92,7 +94,7 @@ def enquire_current_weather():
 
 def enquire_7_day_forcast():
     location_default = "2192362"  # how get this from user? and how marry to id for call
-    _API_key = "70f646114a0cf8d45f17792318c2950a"
+    _API_key = secrets.WEATHER_API_KEY
     _end_point_base = "https://api.openweathermap.org/data/2.5/weather?q={}, NZ&appid={}&units=metric"
     end_point = _end_point_base.format(location_default, _API_key)
     weather_response = requests.get(end_point).json()
