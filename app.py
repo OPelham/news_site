@@ -10,7 +10,7 @@ def index():
 
 @app.route('/news/')
 def news():
-    end_point = "https://newsapi.org/v2/everything?domains=rnz.co.nz,cnn.com,bbc.com,dw.com&pagesize=100&language=en"
+    end_point = "https://newsapi.org/v2/everything?domains=rnz.co.nz,cnn.com,bbc.com,dw.com,reuters.com&pagesize=100&language=en"
     articles = call_news_api(end_point)
     return render_template('news.html', articles=articles, title='news')
 
