@@ -1,14 +1,14 @@
 import os
 
-import requests as requests
 from flask import Flask, render_template, redirect
 # from boto.s3.connection import S3Connection
 import requests
 
 # WEATHER_API_KEY = S3Connection(os.environ['WEATHER_KEY'])
 # NEWS_API_KEY = S3Connection(os.environ['NEWS_KEY'])
-WEATHER_API_KEY = requests.get("https://api.heroku.com/apps/pelicannews/config-vars", "Accept: application/vnd.heroku+json; version=3").get("WEATHER_KEY")
-NEWS_API_KEY = requests.get("https://api.heroku.com/apps/pelicannews/config-vars", "Accept: application/vnd.heroku+json; version=3").get("NEWS_KEY")
+print(str(dict(requests.get("https://api.heroku.com/apps/pelicannews/config-vars", "Accept: application/vnd.heroku+json; version=3"))))
+WEATHER_API_KEY = dict(requests.get("https://api.heroku.com/apps/pelicannews/config-vars", "Accept: application/vnd.heroku+json; version=3")).get("WEATHER_KEY")
+NEWS_API_KEY = dict(requests.get("https://api.heroku.com/apps/pelicannews/config-vars", "Accept: application/vnd.heroku+json; version=3")).get("NEWS_KEY")
 
 app = Flask(__name__)
 
