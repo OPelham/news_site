@@ -1,7 +1,7 @@
-import os
-import hidden_space
 from flask import Flask, render_template, redirect
 import requests
+import os
+# import hidden_space
 
 
 # WEATHER_API_KEY = hidden_space.WEATHER_API_KEY
