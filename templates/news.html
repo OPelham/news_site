@@ -5,7 +5,7 @@
 
 {% block body %}
 
-    <h1 style="padding: 1rem">News</h1>
+    <h1 style="padding: 1rem">{{ title.capitalize() }}</h1>
 
     {% if articles %}
         {% for article in articles %}
