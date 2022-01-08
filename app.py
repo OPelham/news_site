@@ -4,10 +4,10 @@ from flask import Flask, render_template, redirect
 import requests
 
 
-WEATHER_API_KEY = hidden_space.WEATHER_API_KEY
-NEWS_API_KEY = hidden_space.NEWS_API_KEY
-# WEATHER_API_KEY = os.environ.get("WEATHER_KEY")
-# NEWS_API_KEY = os.environ.get("NEWS_KEY")
+# WEATHER_API_KEY = hidden_space.WEATHER_API_KEY
+# NEWS_API_KEY = hidden_space.NEWS_API_KEY
+WEATHER_API_KEY = os.environ.get("WEATHER_KEY")
+NEWS_API_KEY = os.environ.get("NEWS_KEY")
 # WEATHER_API_KEY = requests.get("https://api.heroku.com/apps/pelicannews/config-vars", "Accept: application/vnd.heroku+json; version=3").get("WEATHER_KEY")
 # NEWS_API_KEY = requests.get("https://api.heroku.com/apps/pelicannews/config-vars", "Accept: application/vnd.heroku+json; version=3").get("NEWS_KEY")
 
