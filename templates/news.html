@@ -7,13 +7,13 @@
 {% block body %}
 
     <div class="container">
-        <h1 style="margin-top: 3.2rem; padding: 1rem; text-align: center">{{ title.capitalize() }}</h1>
+        <h1 style="margin-top: 3.5rem; padding: 1rem; text-align: center">{{ title.capitalize() }}</h1>
     </div>
 
 
     {% if articles %}
         {% for article in articles %}
-            <div class="card container-sm" style="max-width: 40rem; margin-bottom: 1rem; padding: 0rem; color: #2F5061">
+            <div class="card container-sm" style="max-width: 40rem; margin-bottom: 1rem; padding: 0rem; color: #2F5061; background-color: #f5f3f3">
               {% if article.get("urlToImage") != None %}
               <img src="{{ article.get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
               {% endif %}

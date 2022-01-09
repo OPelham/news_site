@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect
 import requests
-from pytz import timezone
-from datetime import datetime
+# from pytz import timezone
+# from datetime import datetime
 import os
 # import hidden_space
 
@@ -130,6 +130,7 @@ def covid():
 @app.route('/quiz/')
 def quiz():
     return render_template('quiz.html')
+
 
 
 if __name__ == "__main__":
