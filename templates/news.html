@@ -6,13 +6,16 @@
 
 {% block body %}
 
-    <h1 style="padding: 1rem">{{ title.capitalize() }}</h1>
+    <div class="container">
+        <h1 style="margin-top: 3.2rem; padding: 1rem; text-align: center">{{ title.capitalize() }}</h1>
+    </div>
+
 
     {% if articles %}
         {% for article in articles %}
-            <div class="card container-sm" style="max-width: 40rem; margin-bottom: 0.5rem;">
+            <div class="card container-sm" style="max-width: 40rem; margin-bottom: 1rem; padding: 0rem; color: #2F5061">
               {% if article.get("urlToImage") != None %}
-              <img src="{{ article.get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0.5rem">
+              <img src="{{ article.get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
               {% endif %}
               <div class="card-body">
                 <h5 class="article title">{{ article.get("title") }}</h5>
@@ -22,14 +25,12 @@
                   {% if article.get("description") != None %}
                     <p class="card-text">{{ article.get("description") }}.</p>
                   {% endif %}
-                <a href="{{ article.get('url') }}" class="card-link">{{ article.get('source').get('name') }}</a>
+                <a href="{{ article.get('url') }}" class="card-link" style=" color: #2F5061">{{ article.get('source').get('name') }} </a>
               </div>
             </div>
         {% endfor %}
     {% else %}
         <h5 style="text-align: center">No news found</h5>
     {% endif %}
-
-
 
 {% endblock %}
