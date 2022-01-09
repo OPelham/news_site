@@ -23,7 +23,14 @@ def index():
 def news():
     end_point = "https://newsapi.org/v2/everything?domains=rnz.co.nz,bbc.com,dw.com,aljazeera.com&pagesize=100&language=en"
     articles = call_news_api(end_point)
-    return render_template('news.html', articles=articles, title='news')
+    return render_template('news.html', articles=articles, title='headlines')
+
+
+@app.route('/newzealand/')
+def newzealand():
+    end_point = "https://newsapi.org/v2/everything?domains=rnz.co.nz,nzherald.co.nz,newshub.co.nz,odt.co.nz,stuff.co.nz&pagesize=100&language=en"
+    articles = call_news_api(end_point)
+    return render_template('news.html', articles=articles, title='new zealand')
 
 
 @app.route('/technology/')
