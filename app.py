@@ -2,14 +2,14 @@ from flask import Flask, render_template, redirect
 import requests
 # from pytz import timezone
 # from datetime import datetime
-# import os
-import hidden_space
+import os
+# import hidden_space
 
 # use hidden space when testing on local and environment variables when using heroku
-WEATHER_API_KEY = hidden_space.WEATHER_API_KEY
-NEWS_API_KEY = hidden_space.NEWS_API_KEY
-# WEATHER_API_KEY = os.environ.get("WEATHER_KEY")
-# NEWS_API_KEY = os.environ.get("NEWS_KEY")
+# WEATHER_API_KEY = hidden_space.WEATHER_API_KEY
+# NEWS_API_KEY = hidden_space.NEWS_API_KEY
+WEATHER_API_KEY = os.environ.get("WEATHER_KEY")
+NEWS_API_KEY = os.environ.get("NEWS_KEY")
 
 app = Flask(__name__)
 
