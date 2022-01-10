@@ -22,7 +22,7 @@
               <div class="card-body">
                 <h5 class="article title" style="color: #E57F84">{{ article.get("title") }}</h5>
                 {% if article.get("publishedAt") != None %}
-                <h6 class="card-subtitle mb-2 text-muted" style="color: #2F5061">{{ article.get("publishedAt") }}</h6>
+                  <p class="card-text"><small class="text-muted" style="color: #2F5061">{{ article.get("publishedAt") }}</small></p>
                 {% endif %}
                 {% if article.get("description") != None %}
                 <p class="card-text" style="color: #2F5061">{{ article.get("description") }}.</p>

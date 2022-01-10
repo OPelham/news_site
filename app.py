@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect
 import requests
-# from pytz import timezone
-# from datetime import datetime
+import pytz
+from datetime import datetime
 import os
 # import hidden_space
 
@@ -61,10 +61,14 @@ def call_news_api(end_point):
     news_response_json = dict(news_request.json())
     articles = news_response_json.get("articles")
 
-    # datetime_format = "%d-%m-%Y | %H:%M:%S %Z%z"
-    # for article in articles:
-    #     old_time_format = article.get("publishedAt")
-    #     nz_time_format = old_time_format.astimezone(timezone('Pacific/Auckland')).strftime(datetime_format)
+    datetime_format = "%d-%m-%Y | %H:%M"
+    for article in articles:
+        utc_time_raw = article.get("publishedAt")
+        utc_dt = pytz.timezone('UTC').localize(datetime(int(utc_time_raw[0:4]), int(utc_time_raw[5:7]), int(utc_time_raw[8:10]), int(utc_time_raw[11:13]), int(utc_time_raw[14:16]), int(utc_time_raw[17:19])))
+        local_timezone = pytz.timezone('Pacific/Auckland')
+        nz_time = utc_dt.astimezone(local_timezone).strftime(datetime_format)
+        article["publishedAt"] = nz_time
+
     return articles
 
 
