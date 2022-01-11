@@ -15,17 +15,17 @@
 
     {% if articles %}
         {% for article in articles %}
-            <div class="card container-sm" style="max-width: 40rem; margin-bottom: 1rem; padding: 0rem; color: #2F5061; background-color: #f5f3f3">
+            <div class="card container-sm" style="max-width: 40rem; ">
               {% if article.get("urlToImage") != None %}
               <img src="{{ article.get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
               {% endif %}
               <div class="card-body">
-                <h5 class="article title" style="color: #E57F84">{{ article.get("title") }}</h5>
+                <h5 class="article title">{{ article.get("title") }}</h5>
                 {% if article.get("publishedAt") != None %}
-                  <p class="card-text"><small class="text-muted" style="color: #2F5061">{{ article.get("publishedAt") }}</small></p>
+                  <p class="card-text"><small class="text-muted">{{ article.get("publishedAt") }}</small></p>
                 {% endif %}
                 {% if article.get("description") != None %}
-                <p class="card-text" style="color: #2F5061">{{ article.get("description") }}.</p>
+                <p class="card-text">{{ article.get("description") }}.</p>
                 {% endif %}
                 <a href="{{ article.get('url') }}" class="card-link" style=" color: #2F5061">{{ article.get('source').get('name') }} </a>
               </div>
