@@ -1,0 +1,520 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+
+    <div>
+        <h1 style="padding: 1rem; text-align: center; background-color: #2F5061; color: #E57F84; font-family: monospace; margin-bottom: 1rem">Headlines</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-6" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ articles[1].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if articles[1].get("urlToImage") != None %}
+                <img src="{{ articles[1].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ articles[1].get("title") }}</h5>
+                        {% if articles[1].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ articles[1].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ articles[1].get('url') }}" class="card-link" style=" color: #2F5061">{{ articles[1].get('source').get('name') }} </a>
+                        {% if articles[1].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ articles[1].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                    <a href="{{ articles[2].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                    {% if articles[2].get("urlToImage") != None %}
+                    <img src="{{ articles[2].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                    {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ articles[2].get("title") }}</h5>
+                        {% if articles[2].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ articles[2].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ articles[2].get('url') }}" class="card-link" style=" color: #2F5061">{{ articles[2].get('source').get('name') }} </a>
+                        {% if articles[2].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ articles[2].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of row -->
+
+        <div class="row">
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ articles[3].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if articles[3].get("urlToImage") != None %}
+                <img src="{{ articles[3].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ articles[3].get("title") }}</h5>
+                        {% if articles[3].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ articles[3].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ articles[3].get('url') }}" class="card-link" style=" color: #2F5061">{{ articles[3].get('source').get('name') }} </a>
+                        {% if articles[3].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ articles[3].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                    <a href="{{ articles[4].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                    {% if articles[4].get("urlToImage") != None %}
+                    <img src="{{ articles[4].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                    {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ articles[4].get("title") }}</h5>
+                        {% if articles[4].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ articles[4].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ articles[4].get('url') }}" class="card-link" style=" color: #2F5061">{{ articles[4].get('source').get('name') }} </a>
+                        {% if articles[4].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ articles[4].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ articles[5].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if articles[5].get("urlToImage") != None %}
+                <img src="{{ articles[5].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ articles[5].get("title") }}</h5>
+                        {% if articles[5].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ articles[5].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ articles[5].get('url') }}" class="card-link" style=" color: #2F5061">{{ articles[5].get('source').get('name') }} </a>
+                        {% if articles[5].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ articles[5].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of row -->
+
+        <div class="row">
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ articles[6].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if articles[6].get("urlToImage") != None %}
+                <img src="{{ articles[6].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ articles[6].get("title") }}</h5>
+                        {% if articles[6].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ articles[6].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ articles[6].get('url') }}" class="card-link" style=" color: #2F5061">{{ articles[6].get('source').get('name') }} </a>
+                        {% if articles[6].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ articles[6].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                    <a href="{{ articles[7].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                    {% if articles[7].get("urlToImage") != None %}
+                    <img src="{{ articles[7].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                    {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ articles[7].get("title") }}</h5>
+                        {% if articles[7].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ articles[7].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ articles[7].get('url') }}" class="card-link" style=" color: #2F5061">{{ articles[7].get('source').get('name') }} </a>
+                        {% if articles[7].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ articles[7].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ articles[8].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if articles[8].get("urlToImage") != None %}
+                <img src="{{ articles[8].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ articles[8].get("title") }}</h5>
+                        {% if articles[8].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ articles[8].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ articles[8].get('url') }}" class="card-link" style=" color: #2F5061">{{ articles[8].get('source').get('name') }} </a>
+                        {% if articles[8].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ articles[8].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of row -->
+
+
+    </div> <!-- end of headlines -->
+
+    <div>
+        <h1 style="padding: 1rem; text-align: center; background-color: #2F5061; color: #E57F84; font-family: monospace; margin-bottom: 1rem">NZ News</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-6" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ nz_articles[1].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if nz_articles[1].get("urlToImage") != None %}
+                <img src="{{ nz_articles[1].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ nz_articles[1].get("title") }}</h5>
+                        {% if nz_articles[1].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ nz_articles[1].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ nz_articles[1].get('url') }}" class="card-link" style=" color: #2F5061">{{ nz_articles[1].get('source').get('name') }} </a>
+                        {% if nz_articles[1].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ nz_articles[1].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                    <a href="{{ nz_articles[2].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                    {% if nz_articles[2].get("urlToImage") != None %}
+                    <img src="{{ nz_articles[2].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                    {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ nz_articles[2].get("title") }}</h5>
+                        {% if nz_articles[2].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ nz_articles[2].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ nz_articles[2].get('url') }}" class="card-link" style=" color: #2F5061">{{ nz_articles[2].get('source').get('name') }} </a>
+                        {% if nz_articles[2].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ nz_articles[2].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of row -->
+
+        <div class="row">
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ nz_articles[3].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if nz_articles[3].get("urlToImage") != None %}
+                <img src="{{ nz_articles[3].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ nz_articles[3].get("title") }}</h5>
+                        {% if nz_articles[3].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ nz_articles[3].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ nz_articles[3].get('url') }}" class="card-link" style=" color: #2F5061">{{ nz_articles[3].get('source').get('name') }} </a>
+                        {% if nz_articles[3].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ nz_articles[3].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                    <a href="{{ nz_articles[4].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                    {% if articles[4].get("urlToImage") != None %}
+                    <img src="{{ nz_articles[4].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                    {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ nz_articles[4].get("title") }}</h5>
+                        {% if nz_articles[4].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ nz_articles[4].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ nz_articles[4].get('url') }}" class="card-link" style=" color: #2F5061">{{ nz_articles[4].get('source').get('name') }} </a>
+                        {% if nz_articles[4].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ nz_articles[4].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ nz_articles[5].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if nz_articles[5].get("urlToImage") != None %}
+                <img src="{{ nz_articles[5].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ nz_articles[5].get("title") }}</h5>
+                        {% if nz_articles[5].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ nz_articles[5].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ nz_articles[5].get('url') }}" class="card-link" style=" color: #2F5061">{{ nz_articles[5].get('source').get('name') }} </a>
+                        {% if nz_articles[5].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ nz_articles[5].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of row -->
+
+        <div class="row">
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ nz_articles[6].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if articles[6].get("urlToImage") != None %}
+                <img src="{{ nz_articles[6].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ nz_articles[6].get("title") }}</h5>
+                        {% if nz_articles[6].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ nz_articles[6].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ nz_articles[6].get('url') }}" class="card-link" style=" color: #2F5061">{{ nz_articles[6].get('source').get('name') }} </a>
+                        {% if nz_articles[6].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ nz_articles[6].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                    <a href="{{ nz_articles[7].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                    {% if nz_articles[7].get("urlToImage") != None %}
+                    <img src="{{ nz_articles[7].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                    {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ nz_articles[7].get("title") }}</h5>
+                        {% if nz_articles[7].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ nz_articles[7].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ nz_articles[7].get('url') }}" class="card-link" style=" color: #2F5061">{{ nz_articles[7].get('source').get('name') }} </a>
+                        {% if nz_articles[7].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ nz_articles[7].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ nz_articles[8].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if nz_articles[8].get("urlToImage") != None %}
+                <img src="{{ nz_articles[8].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ nz_articles[8].get("title") }}</h5>
+                        {% if nz_articles[8].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ nz_articles[8].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ nz_articles[8].get('url') }}" class="card-link" style=" color: #2F5061">{{ nz_articles[8].get('source').get('name') }} </a>
+                        {% if nz_articles[8].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ nz_articles[8].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of row -->
+
+
+    </div> <!-- end of nznews -->
+
+    <div>
+        <h1 style="padding: 1rem; text-align: center; background-color: #2F5061; color: #E57F84; font-family: monospace; margin-bottom: 1rem">Technology</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-6" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ tech_articles[1].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if tech_articles[1].get("urlToImage") != None %}
+                <img src="{{ tech_articles[1].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ tech_articles[1].get("title") }}</h5>
+                        {% if tech_articles[1].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ tech_articles[1].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ tech_articles[1].get('url') }}" class="card-link" style=" color: #2F5061">{{ tech_articles[1].get('source').get('name') }} </a>
+                        {% if tech_articles[1].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ tech_articles[1].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                    <a href="{{ tech_articles[2].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                    {% if tech_articles[2].get("urlToImage") != None %}
+                    <img src="{{ tech_articles[2].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                    {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ tech_articles[2].get("title") }}</h5>
+                        {% if tech_articles[2].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ tech_articles[2].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ tech_articles[2].get('url') }}" class="card-link" style=" color: #2F5061">{{ tech_articles[2].get('source').get('name') }} </a>
+                        {% if tech_articles[2].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ tech_articles[2].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of row -->
+
+        <div class="row">
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ tech_articles[3].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if articles[3].get("urlToImage") != None %}
+                <img src="{{ tech_articles[3].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ tech_articles[3].get("title") }}</h5>
+                        {% if tech_articles[3].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ tech_articles[3].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ tech_articles[3].get('url') }}" class="card-link" style=" color: #2F5061">{{ tech_articles[3].get('source').get('name') }} </a>
+                        {% if tech_articles[3].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ tech_articles[3].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                    <a href="{{ tech_articles[4].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                    {% if tech_articles[4].get("urlToImage") != None %}
+                    <img src="{{ tech_articles[4].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                    {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ tech_articles[4].get("title") }}</h5>
+                        {% if tech_articles[4].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ tech_articles[4].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ tech_articles[4].get('url') }}" class="card-link" style=" color: #2F5061">{{ tech_articles[4].get('source').get('name') }} </a>
+                        {% if tech_articles[4].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ tech_articles[4].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ tech_articles[5].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if tech_articles[5].get("urlToImage") != None %}
+                <img src="{{ tech_articles[5].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ tech_articles[5].get("title") }}</h5>
+                        {% if tech_articles[5].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ tech_articles[5].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ tech_articles[5].get('url') }}" class="card-link" style=" color: #2F5061">{{ tech_articles[5].get('source').get('name') }} </a>
+                        {% if tech_articles[5].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ tech_articles[5].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of row -->
+
+        <div class="row">
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ tech_articles[6].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if tech_articles[6].get("urlToImage") != None %}
+                <img src="{{ tech_articles[6].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ tech_articles[6].get("title") }}</h5>
+                        {% if tech_articles[6].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ tech_articles[6].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ tech_articles[6].get('url') }}" class="card-link" style=" color: #2F5061">{{ tech_articles[6].get('source').get('name') }} </a>
+                        {% if tech_articles[6].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ tech_articles[6].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                    <a href="{{ tech_articles[7].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                    {% if tech_articles[7].get("urlToImage") != None %}
+                    <img src="{{ tech_articles[7].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                    {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ tech_articles[7].get("title") }}</h5>
+                        {% if tech_articles[7].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ tech_articles[7].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ tech_articles[7].get('url') }}" class="card-link" style=" color: #2F5061">{{ tech_articles[7].get('source').get('name') }} </a>
+                        {% if tech_articles[7].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ tech_articles[7].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4" >
+                <div class="card container-sm" style="max-width: 40rem; ">
+                <a href="{{ tech_articles[8].get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+                {% if tech_articles[8].get("urlToImage") != None %}
+                <img src="{{ tech_articles[8].get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+                {% endif %}
+                    <div class="card-body" style="text-align: center">
+                        <h5 class="article title">{{ tech_articles[8].get("title") }}</h5>
+                        {% if tech_articles[8].get("description") != None %}
+                        <p class="card-text" style="text-align: left">{{ tech_articles[8].get("description") }}.</p>
+                        {% endif %}
+                        <a href="{{ tech_articles[8].get('url') }}" class="card-link" style=" color: #2F5061">{{ tech_articles[8].get('source').get('name') }} </a>
+                        {% if articles[8].get("publishedAt") != None %}
+                        <p class="card-text"><small class="text-muted">{{ tech_articles[8].get("publishedAt") }}</small></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of row -->
+
+
+    </div> <!-- end of tech -->
+
+
+
+{% endblock %}
