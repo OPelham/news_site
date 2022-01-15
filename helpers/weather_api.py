@@ -1,10 +1,10 @@
 import requests
 
-import hidden_space
-# import os
+# import hidden_space
+import os
 
-WEATHER_API_KEY = hidden_space.WEATHER_API_KEY
-# WEATHER_API_KEY = os.environ.get("WEATHER_KEY")
+# WEATHER_API_KEY = hidden_space.WEATHER_API_KEY
+WEATHER_API_KEY = os.environ.get("WEATHER_KEY")
 
 
 def enquire_current_weather():
