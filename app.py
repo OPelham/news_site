@@ -5,15 +5,19 @@ from helpers.weather_api import enquire_current_weather
 app = Flask(__name__)
 
 
+# @app.route('/')
+# def index():
+#     end_point = "https://newsapi.org/v2/everything?domains=rnz.co.nz,bbc.com,dw.com,aljazeera.com&pagesize=9&language=en"
+#     articles = call_news_api(end_point)
+#     end_point = "https://newsapi.org/v2/everything?domains=rnz.co.nz,nzherald.co.nz,newshub.co.nz,odt.co.nz,stuff.co.nz&pagesize=100&language=en"
+#     nz_articles = call_news_api(end_point)
+#     end_point = "https://newsapi.org/v2/top-headlines?category=technology&pagesize=100&language=en"
+#     tech_articles = call_news_api(end_point)
+#     return render_template('home.html', articles=articles, nz_articles=nz_articles, tech_articles=tech_articles)
+
 @app.route('/')
 def index():
-    end_point = "https://newsapi.org/v2/everything?domains=rnz.co.nz,bbc.com,dw.com,aljazeera.com&pagesize=9&language=en"
-    articles = call_news_api(end_point)
-    end_point = "https://newsapi.org/v2/everything?domains=rnz.co.nz,nzherald.co.nz,newshub.co.nz,odt.co.nz,stuff.co.nz&pagesize=100&language=en"
-    nz_articles = call_news_api(end_point)
-    end_point = "https://newsapi.org/v2/top-headlines?category=technology&pagesize=100&language=en"
-    tech_articles = call_news_api(end_point)
-    return render_template('home.html', articles=articles, nz_articles=nz_articles, tech_articles=tech_articles)
+    return redirect('/news/')
 
 
 @app.route('/news/')

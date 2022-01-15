@@ -8,6 +8,8 @@ WEATHER_API_KEY = hidden_space.WEATHER_API_KEY
 
 
 def enquire_current_weather():
+    """Calls OpenWeatherMap API for current weather in specified location.
+    Returns a dictionary containing only required fields"""
     location_default = "Rangiora"
     global WEATHER_API_KEY
     _API_key = WEATHER_API_KEY
@@ -15,20 +17,27 @@ def enquire_current_weather():
     end_point = _end_point_base.format(location_default, _API_key)
     weather_response = requests.get(end_point).json()
 
-    location = weather_response.get("name")
-    weather_type = (weather_response.get("weather"))[0].get("main")
-    _weather_icon = (weather_response.get('weather'))[0].get('icon')
+    current_weather = process_current_weather(weather_response)
+    return current_weather
+
+
+def process_current_weather(response_info: dict):
+    """Process given response dictionary and returns simplified dictionary including only required fields"""
+
+    location = response_info.get("name")
+    weather_type = (response_info.get("weather"))[0].get("main")
+    _weather_icon = (response_info.get('weather'))[0].get('icon')
     _weather_icon_url_base = "http://openweathermap.org/img/w/{}.png"
     weather_icon_url = _weather_icon_url_base.format(_weather_icon)
-    current_temperature = (weather_response.get("main")).get("temp")
-    max_temperature = (weather_response.get("main")).get("temp_max")
-    min_temperature = (weather_response.get("main")).get("temp_min")
-    cloud_cover = (weather_response.get("clouds")).get("all")
-    humidity = (weather_response.get("main")).get("humidity")
-    pressure = (weather_response.get("main")).get("pressure")
-    wind_speed = (weather_response.get("wind")).get("speed")
-    wind_bearing = (weather_response.get("wind")).get("deg")
-    wind_gust = (weather_response.get("wind")).get("gust")
+    current_temperature = (response_info.get("main")).get("temp")
+    max_temperature = (response_info.get("main")).get("temp_max")
+    min_temperature = (response_info.get("main")).get("temp_min")
+    cloud_cover = (response_info.get("clouds")).get("all")
+    humidity = (response_info.get("main")).get("humidity")
+    pressure = (response_info.get("main")).get("pressure")
+    wind_speed = (response_info.get("wind")).get("speed")
+    wind_bearing = (response_info.get("wind")).get("deg")
+    wind_gust = (response_info.get("wind")).get("gust")
 
     current_weather = {
         "location": location,

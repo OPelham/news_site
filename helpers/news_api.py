@@ -9,13 +9,13 @@ NEWS_API_KEY = hidden_space.NEWS_API_KEY
 # NEWS_API_KEY = os.environ.get("NEWS_KEY")
 
 
-def call_news_api(end_point):
+def call_news_api(end_point: str):
     """Calls NEWS API using the provided endpoint"""
     global NEWS_API_KEY
     custom_headers = {"x-api-key": NEWS_API_KEY}
 
-    news_request = requests.get(end_point, headers=custom_headers)
-    news_response_json = dict(news_request.json())
+    news_response = requests.get(end_point, headers=custom_headers)
+    news_response_json = news_response.json()
     articles = news_response_json.get("articles")
 
     convert_date_time(articles)
