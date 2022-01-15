@@ -1,0 +1,24 @@
+{% extends 'home.html' %}
+
+{% block news_article  %}
+
+    <div class="col-6" >
+        <div class="card container-sm" style="max-width: 40rem; ">
+        <a href="{{ headlines_article.get('url') }}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+        {% if articles[1].get("urlToImage") != None %}
+        <img src="{{ headlines_article.get('urlToImage') }}" class="card-img-top" alt="Article Image" style="padding-top: 0rem">
+        {% endif %}
+            <div class="card-body" style="text-align: center">
+                <h5 class="article title">{{ headlines_article.get("title") }}</h5>
+                {% if headlines_article.get("description") != None %}
+                <p class="card-text" style="text-align: left">{{ headlines_article.get("description") }}.</p>
+                {% endif %}
+                <a href="{{ headlines_article.get('url') }}" class="card-link" style=" color: #2F5061">{{ headlines_article.get('source').get('name') }} </a>
+                {% if headlines_article.get("publishedAt") != None %}
+                <p class="card-text"><small class="text-muted">{{ headlines_article.get("publishedAt") }}</small></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
