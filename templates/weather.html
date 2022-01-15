@@ -6,7 +6,23 @@
 
 {% block body %}
 
-    <h1>{{ title.capitalize() }}</h1>
+<div>
+    <h1 style="padding: 1rem; text-align: center; background-color: #2F5061; color: #E57F84; font-family: monospace; margin-bottom: 1rem">
+        {{ title.title() }}</h1>
+</div>
+
+<div class="container">
+
+
+    <select class="form-select" aria-label="Default select example" style="max-width: 20rem">
+        <option selected>Select Location</option>
+        <option value="1">Auckland</option>
+        <option value="1">New Plymouth</option>
+        <option value="1">Wellington</option>
+        <option value="2">Christchurch</option>
+        <option value="3">Rangiora</option>
+        <option value="3">Dunedin</option>
+    </select>
 
     <h2>Current Weather</h2>
     <p>Current weather in {{ current_weather.get("location") }}: {{ current_weather.get("weather_type") }}</p>
@@ -22,6 +38,7 @@
 
     <h2>7 Day Forcast</h2>
 
+</div>
 
 
 {% endblock %}

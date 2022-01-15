@@ -2,11 +2,11 @@ import requests
 import pytz
 from datetime import datetime
 
-# import hidden_space
-import os
+import hidden_space
+# import os
 
-# NEWS_API_KEY = hidden_space.NEWS_API_KEY
-NEWS_API_KEY = os.environ.get("NEWS_KEY")
+NEWS_API_KEY = hidden_space.NEWS_API_KEY
+# NEWS_API_KEY = os.environ.get("NEWS_KEY")
 
 
 def call_news_api(end_point: str):
