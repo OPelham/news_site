@@ -1,1 +1,0 @@
-// document.getElementById("card-link").setAttribute('onclick', 'location.href = "www.google.com"');

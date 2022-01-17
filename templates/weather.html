@@ -12,33 +12,42 @@
 </div>
 
 <div class="container">
+    <div>
+        <select id="selectBox" class="form-select" aria-label="Default select example"
+                onchange="selectWeatherLocation();">
+            <option selected>Select Location</option>
+            <option value="1">Auckland</option>
+            <option value="2">New Plymouth</option>
+            <option value="3">Wellington</option>
+            <option value="4">Christchurch</option>
+            <option value="5">Rangiora</option>
+            <option value="6">Dunedin</option>
+        </select>
+    </div>
 
+    <div style="margin-bottom: 2rem;">
+        <h2>{{ current_weather.get("location").title() }}</h2>
+        <img src="{{ current_weather.get('weather_icon_url') }}" alt="weather icon">
+        <p>Current weather in {{ current_weather.get("location") }}: {{ current_weather.get("weather_type") }}</p>
+        <p>The current temperature is {{ current_weather.get("current_temperature") }} degrees.
+            <br>Expect a high of {{ current_weather.get("max_temperature") }}
+            degrees and a low of {{ current_weather.get("min_temperature") }} degrees </p>
+        <p>Cloud cover of {{ current_weather.get("cloud_cover") }}%</p>
+        <p>Humidity: {{ current_weather.get("humidity") }}%
+            <br>Pressure: {{ current_weather.get("pressure") }}hPa</p>
+        <p>Current wind speed {{ current_weather.get("wind_speed") }}, bearing {{ current_weather.get("wind_bearing") }}
+            <br>Gusting to {{ current_weather.get("wind_gust") }}</p>
+    </div>
 
-    <select class="form-select" aria-label="Default select example" style="max-width: 20rem">
-        <option selected>Select Location</option>
-        <option value="1">Auckland</option>
-        <option value="1">New Plymouth</option>
-        <option value="1">Wellington</option>
-        <option value="2">Christchurch</option>
-        <option value="3">Rangiora</option>
-        <option value="3">Dunedin</option>
-    </select>
-
-    <h2>Current Weather</h2>
-    <p>Current weather in {{ current_weather.get("location") }}: {{ current_weather.get("weather_type") }}</p>
-    <img src="{{ current_weather.get('weather_icon_url') }}" alt="weather icon">
-    <p>The current temperature is {{ current_weather.get("current_temperature") }} degrees.
-        <br>Expect a high of {{ current_weather.get("max_temperature") }}
-        degrees and a low of {{ current_weather.get("min_temperature") }} degrees </p>
-    <p>Cloud cover of {{ current_weather.get("cloud_cover") }}%</p>
-    <p>Humidity: {{ current_weather.get("humidity") }}%
-        <br>Pressure: {{ current_weather.get("pressure") }}hPa</p>
-    <p>Current wind speed {{ current_weather.get("wind_speed") }}, bearing {{ current_weather.get("wind_bearing") }}
-        <br>Gusting to {{ current_weather.get("wind_gust") }}</p>
-
-    <h2>7 Day Forcast</h2>
+    <div>
+        <h2>7 Day Forcast</h2>
+    </div>
 
 </div>
+
+<script>
+    console.log("testrun")
+</script>
 
 
 {% endblock %}

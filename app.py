@@ -55,7 +55,7 @@ def sport():
     return render_template('news.html', articles=sport_articles, title='sport')
 
 
-@app.route('/weather/')
+@app.route('/weather/', methods=["POST", "GET"])
 def weather():
     current_weather_dictionary = enquire_current_weather()
     return render_template('weather.html', current_weather=current_weather_dictionary, title='weather')
