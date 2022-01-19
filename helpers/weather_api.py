@@ -7,14 +7,14 @@ import os
 WEATHER_API_KEY = os.environ.get("WEATHER_KEY")
 
 
-def enquire_current_weather():
+def enquire_current_weather(location: str):
     """Calls OpenWeatherMap API for current weather in specified location.
     Returns a dictionary containing only required fields"""
-    location_default = "Rangiora"
+    # location_default = "Rangiora"
     global WEATHER_API_KEY
     _API_key = WEATHER_API_KEY
     _end_point_base = "https://api.openweathermap.org/data/2.5/weather?q={}, NZ&appid={}&units=metric"
-    end_point = _end_point_base.format(location_default, _API_key)
+    end_point = _end_point_base.format(location, _API_key)
     weather_response = requests.get(end_point).json()
 
     current_weather = process_current_weather(weather_response)

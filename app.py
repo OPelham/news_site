@@ -1,6 +1,10 @@
-from flask import Flask, render_template, redirect
+from urllib import request
+
+from flask import Flask, render_template, redirect, request
+
 from helpers.news_api import call_news_api
 from helpers.weather_api import enquire_current_weather
+
 
 app = Flask(__name__)
 
@@ -57,8 +61,15 @@ def sport():
 
 @app.route('/weather/', methods=["POST", "GET"])
 def weather():
-    current_weather_dictionary = enquire_current_weather()
-    return render_template('weather.html', current_weather=current_weather_dictionary, title='weather')
+    if request.method == "POST":
+        location_content = request.get_json()  # figure out how to access json in post
+        location = location_content.get("Selection")
+        current_weather_dictionary = enquire_current_weather(location)
+        return render_template('weather.html', current_weather=current_weather_dictionary, title='weather')
+
+    else:
+        current_weather_dictionary = enquire_current_weather("Rangiora")
+        return render_template('weather.html', current_weather=current_weather_dictionary, title='weather')
 
 
 @app.route('/football/')
